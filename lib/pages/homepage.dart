@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class homepage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final int day = 30;
   final String name = "coding";
 
@@ -13,9 +13,13 @@ class homepage extends StatelessWidget {
       body: Center(
         child: Container(
           child: Text("this $day course of $name"),
+
         ),
+
       ),
+
       drawer: Drawer(),
+
     );
   }
 }
