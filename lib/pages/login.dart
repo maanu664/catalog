@@ -1,7 +1,14 @@
-import 'package:catalog/utils/routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
+  @override
+  State<LogIn> createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  String name = "";
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -17,7 +24,7 @@ class LogIn extends StatelessWidget {
               height: 10,
             ),
             Text(
-              "welcome",
+              "welcome $name",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -33,29 +40,47 @@ class LogIn extends StatelessWidget {
                       hintText: "Enter Your Name",
                       labelText: "User Name",
                     ),
+                    onChanged: (Value) {
+                      name = Value;
+                      setState(() {});
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: "Enter Your Password",
                       labelText: "Password",
-
                     ),
                   ),
                   SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                    child: Text("Log In"),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      shadowColor: Colors.yellowAccent,
-                      minimumSize: Size(120,50),
+                  Container(
+                    height: 40,
+                    width: 90,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "login",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
-                    },
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurpleAccent,
+                    ),
                   ),
+                  // ElevatedButton(
+                  //   child: Text("Log In"),
+                  //   style: TextButton.styleFrom(
+                  //     backgroundColor: Colors.red,
+                  //     shadowColor: Colors.yellowAccent,
+                  //     minimumSize: Size(120,50),
+                  //   ),
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                  //   },
+                  // ),
                 ],
               ),
             )
