@@ -8,28 +8,30 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Image.network(Items.image),
-      title: Text(
-        Items.name,
-        style: TextStyle(
-          color: Colors.blueGrey,
-          fontWeight: FontWeight.bold,
+    return Card(
+      child: ListTile(
+        leading: Image.network(Items.image),
+        title: Text(
+          Items.name,
+          style: TextStyle(
+            color: Colors.blueGrey,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ),
-      subtitle: Text(
-        Items.decs,
-        style: TextStyle(
-          color: Colors.blue,
-          fontWeight: FontWeight.normal,
+        subtitle: Text(
+          Items.decs,
+          style: TextStyle(
+            color: Colors.blue,
+            fontWeight: FontWeight.normal,
+          ),
         ),
-      ),
-      trailing: Text(
-        "\$${Items.price}",
-        textScaleFactor: 1.2,
-        style: TextStyle(
-          color: Colors.deepPurple,
-          fontWeight: FontWeight.bold,
+        trailing: Text(
+          "\$${Items.price}",
+          textScaleFactor: 1.2,
+          style: TextStyle(
+            color: Colors.deepPurple,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
